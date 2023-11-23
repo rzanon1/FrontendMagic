@@ -47,6 +47,7 @@ export default function App() {
               placeholderTextColor="#AFAFAF"
               value={form.password}
               onChangeText={password => setForm({... form, password})}
+              secureTextEntry={true}
             />
           </View>
 
@@ -100,11 +101,14 @@ const styles = StyleSheet.create({
     color: '#AD4639',
     textAlign: 'center',
   },
-  input: {},
+  input: {
+  },
   inputLabel: {
     fontSize: 17,
     fontWeight: '600',
     color: '#222',
+    padding: 10,
+    alignSelf: 'center',
   },
   inputControl: {
     height: 44,
@@ -114,11 +118,13 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     color: '#222',
+    alignSelf: 'center'
   },
 
   form:{
     marginBottom: 24,
     flex: 1,
+    padding: 20,
   },
 
   formAction:{
@@ -142,7 +148,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
     paddingHorizontal: 20,
-
+    maxWidth: 900,
+    alignSelf: 'center'
   },
   buttonText: {
     fontSize: 18,
