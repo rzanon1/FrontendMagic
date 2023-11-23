@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 
 
 
 export default function App() {
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
+
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#5F5A59'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#EAEAE5'}}>
       <View style={styles.container}>
         <View style={styles.header}>
           <Image source={require('./assets/Icone.png')}
@@ -34,7 +39,7 @@ export default function App() {
           </View>
 
           <View style={styles.input}>
-            <Text style={styles.inputLabel}>Email</Text>
+            <Text style={styles.inputLabel}>Senha</Text>
 
             <TextInput 
               style={styles.inputControl}
@@ -85,7 +90,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 27,
     fontWeight: '700',
-    color: '#C0B8B7',
+    color: '#292827',
     marginBottom: 6,
     textAlign: 'center',
   },
@@ -111,6 +116,39 @@ const styles = StyleSheet.create({
     color: '#222',
   },
 
+  form:{
+    marginBottom: 24,
+    flex: 1,
+  },
+
+  formAction:{
+    marginVertical: 24,
+  },
+
+  formFooter:{
+    fontSize: 17,
+    fontWeight: '600',
+    color: '#222',
+    textAlign: 'center',
+    letterSpacing: 0.1,
+  },
+
+  button: {
+    backgroundColor: '#FD8D00',
+    borderRadius: 8,
+    borderWidth: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 600,
+    color: '#fff',
+  },
 });
 
 
